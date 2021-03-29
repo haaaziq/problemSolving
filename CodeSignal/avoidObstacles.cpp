@@ -6,7 +6,7 @@ int avoidObstacles(vector<int> inputArray){
     sort(inputArray.begin(), inputArray.end());
     int temp{0};
     int res;
-    for(int i=2; i<=1000; i++){
+    for(int i=2; i<=10000; i++){
         for(int j=0; j<inputArray.size(); j++){
             if(inputArray[j]%i==0){
                 temp=0;
