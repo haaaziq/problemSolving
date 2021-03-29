@@ -29,11 +29,11 @@ vector<vector<int>> minesweeper(vector<vector<bool>> matrix) {
             finalM[indexes[i].first][indexes[i].second-1]++;
         if(indexes[i].second+1 < matrix[0].size())
             finalM[indexes[i].first][indexes[i].second+1]++;
-        if(indexes[i].first+1 < matrix[0].size() && indexes[i].second-1 >= 0)
+        if(indexes[i].first+1 < matrix.size() && indexes[i].second-1 >= 0)
             finalM[indexes[i].first+1][indexes[i].second-1]++;
-        if(indexes[i].first+1 < matrix[0].size())
+        if(indexes[i].first+1 < matrix.size())
             finalM[indexes[i].first+1][indexes[i].second]++;
-        if(indexes[i].second+1 < matrix[0].size() && indexes[i].first+1 < matrix[0].size())
+        if(indexes[i].second+1 < matrix[0].size() && indexes[i].first+1 < matrix.size())
             finalM[indexes[i].first+1][indexes[i].second+1]++;
     }
     for(int i=0; i<finalM.size(); i++){
@@ -45,9 +45,9 @@ vector<vector<int>> minesweeper(vector<vector<bool>> matrix) {
 }
 
 int main(){
-    vector<vector<bool>> matrix = {{true, false, false}, 
-                                   {false, true, false}, 
-                                   {false, false, false}};
+    vector<vector<bool>> matrix = {{true,false,false,true}, 
+                                   {false,false,true,false}, 
+                                   {true,true,false,true}};
     minesweeper(matrix);
     return 0;
 }
